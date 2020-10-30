@@ -10,72 +10,75 @@ import { auth , signInWithGoogle } from "../../firebase/firebase.utils";
 
 class SignIn extends React.Component {
   constructor(props) {
-  super(props);
+    super(props);
 
-  this.state = {
-    email: "" ,
-    password: ""
+    this.state = {
+      email: '',
+      password: ''
+    };
+  }
+
+  handleSubmit = async event => {
+    event.preventDefault();
+    const { emailSignInStart } = this.props;
+    const { email, password } = this.state;
+
+    emailSignInStart(email, password);
   };
-}
-    handleSubmit = async event => {
-      event.preventDefault();
 
-      const { email , password} = this.state;
+  handleChange = event => {
+    const { value, name } = event.target;
 
-      try {
-        await auth.signInWithEmailAndPassword(email , password);
-        this.setState({email: "" , password: ""});
-      } catch(error) {
-        console.log(error);
-      }
-
-      this.setState({
-        email: "" ,
-        password: ""
-      });
-    }
-
-    handleChange = event => {
-      const {name , value} = event.target;
-      this.setState({
-        [name] : value
-      });
-    }
+    this.setState({ [name]: value });
+  };
 
   render() {
+    const { googleSignInStart } = this.props;
     return (
-      <div className = "sign-in">
-        <h2>I already have an account</h2>
+      <SignInContainer>
+        <SignInTitle>I already have an account</SignInTitle>
         <span>Sign in with your email and password</span>
 
-        <form onSubmit = {this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <FormInput
-          handleChange = {this.handleChange}
-          name="email"
-          type="email"
-          value={this.state.email}
-          label="email"
-          autoComplete="off"
-          required />
-
+            name='email'
+            type='email'
+            handleChange={this.handleChange}
+            value={this.state.email}
+            label='email'
+            required
+          />
           <FormInput
-          handleChange = {this.handleChange}
-          name="password"
-          type="password"
-          value={this.state.password}
-          label="password"
-          autocomplete="off"
-          required />
-
-        <div className = "buttons">
-          <CustomButton name="submit" type="submit" value="Submit form" > SIGN IN </CustomButton>
-          <CustomButton onClick = {signInWithGoogle} isGoogleSignIn> SIGN IN WITH GOOGLE </CustomButton>
-        </div>
+            name='password'
+            type='password'
+            value={this.state.password}
+            handleChange={this.handleChange}
+            label='password'
+            required
+          />
+          <ButtonsBarContainer>
+            <CustomButton type='submit'> Sign in </CustomButton>
+            <CustomButton
+              type='button'
+              onClick={googleSignInStart}
+              isGoogleSignIn
+            >
+              Sign in with Google
+            </CustomButton>
+          </ButtonsBarContainer>
         </form>
-      </div>
-    )
+      </SignInContainer>
+    );
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  googleSignInStart: () => dispatch(googleSignInStart()),
+  emailSignInStart: (email, password) =>
+    dispatch(emailSignInStart({ email, password }))
+});
 
-export default SignIn;
+export default connect(
+  null,
+  mapDispatchToProps
+)(SignIn);

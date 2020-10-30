@@ -9,7 +9,7 @@ import {
   ItemCountContainer
 } from './cart-icon.styles';
 
-const CartIcon = ({ toggleCartHidden, itemCount }) => (
+const CartIcon = ({ toggleHiddenCart, itemCount }) => (
   <CartContainer onClick={toggleHiddenCart}>
     <ShoppingIcon />
     <ItemCountContainer>{itemCount}</ItemCountContainer>
@@ -17,7 +17,7 @@ const CartIcon = ({ toggleCartHidden, itemCount }) => (
 );
 
 const mapDispatchToProps = dispatch => ({
-  toggleHiddenCart: () => dispatch(toggleCartHidden())
+  toggleHiddenCart: () => dispatch(toggleHiddenCart())
 });
 
 const mapStateToProps = createStructuredSelector({

@@ -10,7 +10,7 @@ import {
 } from './cart-icon.styles';
 
 const CartIcon = ({ toggleCartHidden, itemCount }) => (
-  <CartContainer onClick={toggleCartHidden}>
+  <CartContainer onClick={toggleHiddenCart}>
     <ShoppingIcon />
     <ItemCountContainer>{itemCount}</ItemCountContainer>
   </CartContainer>

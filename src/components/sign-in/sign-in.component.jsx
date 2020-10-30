@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from 'react-redux';
+
 import {
   SignInContainer,
   SignInTitle,
@@ -7,6 +9,10 @@ import {
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import { auth , signInWithGoogle } from "../../firebase/firebase.utils";
+import {
+  googleSignInStart,
+  emailSignInStart
+} from '../../redux/user/user.actions';
 
 class SignIn extends React.Component {
   constructor(props) {

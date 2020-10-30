@@ -1,6 +1,13 @@
 import React from "react";
 import {connect} from "react-redux";
-import "./checkout.styles.scss";
+import {
+  CheckoutPageContainer,
+  CheckoutHeaderContainer,
+  HeaderBlockContainer,
+  TotalContainer,
+  WarningContainer
+} from './checkout.styles';
+
 import {createStructuredSelector} from "reselect";
 import {selectCartItems, selectCartTotal} from "../../../redux/cart/cart.selectors";
 import CheckoutItem from "../../checkout-item/checkout-item.component";

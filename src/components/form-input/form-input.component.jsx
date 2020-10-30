@@ -1,5 +1,9 @@
 import React from "react";
-import "./form-input.styles.scss";
+import {
+  GroupContainer,
+  FormInputContainer,
+  FormInputLabel
+} from './form-input.styles';
 
 const FormInput = ({ handleChange , label , ...otherprops}) => (
   <div className = "group">

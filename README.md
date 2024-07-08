@@ -2,7 +2,7 @@
 
 A full-stack web application for an online clothing store, built with React.js, Redux, and Firebase. This project showcases a chic and elegant design with custom CSS, and includes features such as authentication, storage, cart and checkout functionality, and Stripe integration for transactions.
 
-A preview:
+## A preview:
 <div>
     <a href="https://www.loom.com/share/db4c9c2e00b9482a9c2b917d0448b618">
       <p>Crwn-Clothing</p>
@@ -47,16 +47,17 @@ Ensure you have the following installed on your local machine:
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/your-username/clothing-website.git
-   cd clothing-website
+   git clone https://github.com/overlordiam/crwn-clothing.git
+   cd crwn-clothing
 
 2. **Installation**:
    ```sh
    npm install
 
 3. **Acquire credentials for Firebase and Stripe**
+   Login to Firebase and Stripe to make an acocunt. Pretty simple and straightforward
 
-4. **Build and run the application**:
+5. **Build and run the application**:
    ```sh
    npm start
    npm run build

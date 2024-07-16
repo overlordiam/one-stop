@@ -30,7 +30,7 @@ A full-stack web application for an online clothing store, built with React.js, 
 - **Authentication**: Firebase OAuth
 - **Payment Gateway**: Stripe API
 - **Styling**: Custom CSS
-- **Version Control**: Github
+- **Version Control**: Git
 
 ## Getting Started
 

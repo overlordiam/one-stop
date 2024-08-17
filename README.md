@@ -5,7 +5,7 @@ A full-stack web application for an online clothing store, built with React.js, 
 ## A preview:
 <div>
     <a href="https://www.loom.com/share/db4c9c2e00b9482a9c2b917d0448b618">
-      <p>Crwn-Clothing</p>
+      <p>One-Stop</p>
     </a>
     <a href="https://www.loom.com/share/db4c9c2e00b9482a9c2b917d0448b618">
       <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/db4c9c2e00b9482a9c2b917d0448b618-with-play.gif">
@@ -47,7 +47,7 @@ Ensure you have the following installed on your local machine:
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/overlordiam/crwn-clothing.git
+   git clone https://github.com/overlordiam/one-stop.git
    cd crwn-clothing
 
 2. **Installation**:
